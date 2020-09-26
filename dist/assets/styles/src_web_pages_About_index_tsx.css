@@ -1,0 +1,106 @@
+article{
+  border: 1px solid var(--border-color);
+  padding: 0 30px
+}
+article h2{
+    font-size: 1.125rem;
+    font-weight: bold;
+    line-height: 3.625rem;
+    border-bottom: 1px dashed var(--border-color);
+    margin-bottom: 20px;
+
+  }
+article p{
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5rem;
+    margin-bottom: 20px;
+  }
+article img{
+    width: 40%;
+    margin-right: 3%;
+  }
+.contactContainer{
+  border: 1px solid var(--border-color);
+  margin: 20px 0
+}
+.contactContainer h3{
+    font-size: 1.125rem;
+    line-height: 3.75rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-left: 20px;
+    font-weight: bold;
+  }
+.contactContainer .contactContent{
+    padding: 20px
+  }
+.contactContainer .contactContent div{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start;
+      margin-bottom: 10px
+    }
+.contactContainer .contactContent div p{
+        line-height: 1.25rem;
+      }
+.contactContainer .contactContent div p:first-child{
+        white-space:nowrap;
+      }
+.contactContainer .contactContent .WeChat{
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center
+    }
+.contactContainer .contactContent .WeChat img{
+        width: 148px;
+      }
+.breadCrumbs{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1rem;
+  margin: 22px 0
+}
+.breadCrumbs li a{
+    color: var(--theme-color);
+  }
+.breadCrumbs li{
+    max-width: 300px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    cursor: default;
+  }
+.asideTitle{
+  height: 60px;
+  background-color: var(--theme-color);
+  font-size: 1.125rem;
+  color: var(--fc);
+  padding: 0 20px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center
+}
+.asideTitle p{
+    font-weight: bold;
+  }

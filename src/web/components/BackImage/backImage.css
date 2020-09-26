@@ -1,0 +1,11 @@
+.backImages{
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: height .3s;
+  & img{
+    height: 100%;
+  }
+}

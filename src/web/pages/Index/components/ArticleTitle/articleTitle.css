@@ -1,0 +1,136 @@
+:root{
+  --positionHCenter:{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  };
+  --positionCenter:{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  };
+  --flex:{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+.article-title{
+  font-size: 16px;
+  color: #999;
+  text-align: center;
+  padding: 40px 0;
+  font-weight: 300;
+  position: relative;
+  cursor: default;
+  & .context{
+    position: relative;
+    display: inline-block;
+    & .context-bj{
+      overflow: hidden;
+      height: 44px;
+      width: 100%;
+      @apply --positionHCenter;
+      @apply --flex;
+      &::before{
+        content: "";
+        background-color: rgba(236,236,236,.4);
+        height: 300px;
+        width: 1px;
+        box-shadow: 0 0 hsla(0,0%,92.5%,.4), 5px -5px hsla(0,0%,92.5%,.4), 10px -10px hsla(0,0%,92.5%,.4), 15px -15px hsla(0,0%,92.5%,.4), 20px -20px hsla(0,0%,92.5%,.4), 25px -25px hsla(0,0%,92.5%,.4), 30px -30px hsla(0,0%,92.5%,.4), 35px -35px hsla(0,0%,92.5%,.4), 40px -40px hsla(0,0%,92.5%,.4), 45px -45px hsla(0,0%,92.5%,.4), 50px -50px hsla(0,0%,92.5%,.4), 55px -55px hsla(0,0%,92.5%,.4), 60px -60px hsla(0,0%,92.5%,.4), 65px -65px hsla(0,0%,92.5%,.4), 70px -70px hsla(0,0%,92.5%,.4), 75px -75px hsla(0,0%,92.5%,.4), 80px -80px hsla(0,0%,92.5%,.4), 85px -85px hsla(0,0%,92.5%,.4), 90px -90px hsla(0,0%,92.5%,.4), 95px -95px hsla(0,0%,92.5%,.4), 100px -100px hsla(0,0%,92.5%,.4), 105px -105px hsla(0,0%,92.5%,.4), 110px -110px hsla(0,0%,92.5%,.4), 115px -115px hsla(0,0%,92.5%,.4), 120px -120px hsla(0,0%,92.5%,.4), 125px -125px hsla(0,0%,92.5%,.4), 130px -130px hsla(0,0%,92.5%,.4), 135px -135px hsla(0,0%,92.5%,.4), 140px -140px hsla(0,0%,92.5%,.4), 145px -145px hsla(0,0%,92.5%,.4), 150px -150px hsla(0,0%,92.5%,.4), 155px -155px hsla(0,0%,92.5%,.4), 160px -160px hsla(0,0%,92.5%,.4), 165px -165px hsla(0,0%,92.5%,.4), 170px -170px hsla(0,0%,92.5%,.4), 175px -175px hsla(0,0%,92.5%,.4), 180px -180px hsla(0,0%,92.5%,.4), 185px -185px hsla(0,0%,92.5%,.4), 190px -190px hsla(0,0%,92.5%,.4), 195px -195px hsla(0,0%,92.5%,.4), 200px -200px hsla(0,0%,92.5%,.4), 205px -205px hsla(0,0%,92.5%,.4), 210px -210px hsla(0,0%,92.5%,.4), 215px -215px hsla(0,0%,92.5%,.4), 220px -220px hsla(0,0%,92.5%,.4), 225px -225px hsla(0,0%,92.5%,.4), 230px -230px hsla(0,0%,92.5%,.4), 235px -235px hsla(0,0%,92.5%,.4), 240px -240px hsla(0,0%,92.5%,.4), 245px -245px hsla(0,0%,92.5%,.4), 250px -250px hsla(0,0%,92.5%,.4), 255px -255px hsla(0,0%,92.5%,.4), 260px -260px hsla(0,0%,92.5%,.4), 265px -265px hsla(0,0%,92.5%,.4), 270px -270px hsla(0,0%,92.5%,.4), 275px -275px hsla(0,0%,92.5%,.4), 280px -280px hsla(0,0%,92.5%,.4), 285px -285px hsla(0,0%,92.5%,.4), 290px -290px hsla(0,0%,92.5%,.4), 295px -295px hsla(0,0%,92.5%,.4), 300px -300px hsla(0,0%,92.5%,.4), 305px -305px hsla(0,0%,92.5%,.4), 310px -310px hsla(0,0%,92.5%,.4), 315px -315px hsla(0,0%,92.5%,.4), 320px -320px hsla(0,0%,92.5%,.4), 325px -325px hsla(0,0%,92.5%,.4), 330px -330px hsla(0,0%,92.5%,.4), 335px -335px hsla(0,0%,92.5%,.4), 340px -340px hsla(0,0%,92.5%,.4), 345px -345px hsla(0,0%,92.5%,.4), 350px -350px hsla(0,0%,92.5%,.4), 355px -355px hsla(0,0%,92.5%,.4), 360px -360px hsla(0,0%,92.5%,.4), 365px -365px hsla(0,0%,92.5%,.4), 370px -370px hsla(0,0%,92.5%,.4), 375px -375px hsla(0,0%,92.5%,.4), 380px -380px hsla(0,0%,92.5%,.4), 385px -385px hsla(0,0%,92.5%,.4), 390px -390px hsla(0,0%,92.5%,.4), 395px -395px hsla(0,0%,92.5%,.4), 400px -400px hsla(0,0%,92.5%,.4), 405px -405px hsla(0,0%,92.5%,.4), 410px -410px hsla(0,0%,92.5%,.4), 415px -415px hsla(0,0%,92.5%,.4), 420px -420px hsla(0,0%,92.5%,.4), 425px -425px hsla(0,0%,92.5%,.4), 430px -430px hsla(0,0%,92.5%,.4), 435px -435px hsla(0,0%,92.5%,.4), 440px -440px hsla(0,0%,92.5%,.4), 445px -445px hsla(0,0%,92.5%,.4), 450px -450px hsla(0,0%,92.5%,.4), 455px -455px hsla(0,0%,92.5%,.4), 460px -460px hsla(0,0%,92.5%,.4), 465px -465px hsla(0,0%,92.5%,.4), 470px -470px hsla(0,0%,92.5%,.4), 475px -475px hsla(0,0%,92.5%,.4), 480px -480px hsla(0,0%,92.5%,.4), 485px -485px hsla(0,0%,92.5%,.4), 490px -490px hsla(0,0%,92.5%,.4), 495px -495px hsla(0,0%,92.5%,.4);
+        transform: rotate(45deg);
+        position: absolute;
+        top: -100px;
+        left: -150px;
+        z-index: 0;
+      }
+    }
+    & .context-text{
+      position: relative;
+      z-index: 10;
+      padding: 0 33px;
+      @apply --flex;
+      & .initial{
+        font-size: 80px;
+        font-weight: 600;
+      }
+      & .ctx-content{
+        & h3{
+          font-size: 26px;
+        }
+        & p{
+          font-size: 26px;
+          color: #ccc;
+          font-weight: normal;
+        }
+      }
+
+    }
+    &::after {
+      content: "";
+      height: 5px;
+      width: 5px;
+      background-color: #E12D60;
+      @apply --positionHCenter;
+      right: -5px;
+      margin-top: -24px;
+    }
+  }
+  &::before{
+    content: "";
+    width: 40px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #898989;
+    @apply --positionCenter;
+    bottom: 20px;
+    top: inherit;
+  }
+  &.white{
+    & .tips,& h3{
+      color: #ffffff !important;
+    }
+  }
+  &.white::before{
+    background-color: #ffffff;
+  }
+
+}
+
+@media screen and (max-width: 750px){
+  .article-title{
+    font-size: 16px;
+    color: #999;
+    text-align: center;
+    padding: 40px 0;
+    font-weight: 300;
+    & .context{
+      position: relative;
+      display: inline-block;
+      & .context-bj{
+        height: 30px;
+      }
+      & .context-text{
+        & .initial{
+          font-size: 60px;
+        }
+        & .ctx-content{
+          & h3{
+            font-size: 20px;
+          }
+          & p{
+            font-size: 20px;
+          }
+        }
+
+      }
+    }
+    & .tips{
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}

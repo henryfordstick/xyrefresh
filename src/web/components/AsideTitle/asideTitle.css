@@ -1,0 +1,14 @@
+.asideTitle{
+  height: 60px;
+  background-color: var(--theme-color);
+  font-size: 18px;
+  color: var(--fc);
+  padding: 0 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & p{
+    font-weight: bold;
+  }
+}

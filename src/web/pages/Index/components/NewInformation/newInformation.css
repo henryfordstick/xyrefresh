@@ -1,0 +1,196 @@
+.newsList{
+  overflow: hidden;
+  margin-right: -12px;
+  margin-bottom: 100px;
+  & li{
+    border: 1px solid #DCDCDC;
+    overflow: hidden;
+    float: left;
+    margin-right: 1%;
+    margin-bottom: 10px;
+    & span{
+      text-align: right;
+      display: inline-block;
+      padding: 0 20px;
+      & strong{
+        display: inline-block;
+        width: 100%;
+        font-size: 40px;
+        line-height: 40px;
+      }
+      & em{
+        font-size: 14px;
+        color: #333;
+        text-align: right;
+        display: inline-block;
+
+      }
+    }
+    & .newContext{
+      & h4 .guide-item{
+        font-size:16px;
+        color: #333;
+        margin-bottom: 12px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+      }
+      & p .guide-item{
+        font-size: 14px;
+        color: #999;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        line-height: 21px;
+      }
+      & .guide-item{
+        transition: all .3s;
+      }
+      & .guide-item:hover{
+        color: var(--theme-hover-color);
+        text-decoration: underline;
+      }
+    }
+    &:nth-child(-n+2){
+      width: 24%;
+      & .img{
+        overflow: hidden;
+        max-height: 172px;
+        & img{
+          width: 100%;
+          vertical-align: middle;
+          transition: all .3s;
+        }
+        &:hover img{
+          transform: scale(1.12);
+        }
+      }
+      & span{
+        position: relative;
+        z-index: 10;
+        background-color: var(--theme-color);
+        color: var(--theme-hover-color);
+        margin-top: -30px;
+        margin-left: 20px;
+        height: 40px;
+        padding: 0 7px;
+        & strong {
+          color: var(--fc);
+          width: initial;
+          margin-right: 4px;
+        }
+        & em{
+          color: var(--fc);
+          text-align: left;
+        }
+      }
+      & .newContext{
+        padding: 20px;
+      }
+    }
+    &:nth-child(n+3){
+      width: 49%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 17px 11px 0;
+      & .newContext{
+        padding-left: 10px;
+        border-left: 1px solid #333;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px){
+  .newsList{
+    overflow: hidden;
+    margin-right: -12px;
+    margin-bottom: 100px;
+    & li{
+      &:nth-child(-n+2){
+        width: 49%;
+      }
+      &:nth-child(n+3){
+        width: 99%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px){
+  .newsList{
+    margin-right: -12px;
+    & li{
+      & span{
+        text-align: right;
+        display: inline-block;
+        padding: 0 10px;
+        & strong{
+          display: inline-block;
+          width: 100%;
+          font-size: 30px;
+          line-height: 40px;
+        }
+        & em{
+          font-size: 12px;
+        }
+      }
+      & .newContext{
+        & h4 .guide-item{
+          font-size:14px;
+          color: #333;
+          margin-bottom: 12px;
+        }
+        & p .guide-item{
+          font-size: 12px;
+          line-height: 16px;
+        }
+      }
+      &:nth-child(-n+2){
+        & .img{
+          overflow: hidden;
+          max-height: 172px;
+          & img{
+            width: 100%;
+            vertical-align: middle;
+            transition: all .3s;
+          }
+          &:hover img{
+            transform: scale(1.12);
+          }
+        }
+        & span{
+          margin-top: -30px;
+          margin-left: 14px;
+          height: 40px;
+          padding: 0 7px;
+          & strong {
+            color: var(--fc);
+            width: initial;
+            margin-right: 4px;
+          }
+          & em{
+            color: var(--fc);
+            text-align: left;
+          }
+        }
+        & .newContext{
+          padding: 10px;
+        }
+      }
+      &:nth-child(n+3){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 17px 11px 0;
+        & .newContext{
+          padding-left: 10px;
+          border-left: 1px solid #333;
+        }
+      }
+    }
+  }
+}

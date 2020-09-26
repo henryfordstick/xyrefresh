@@ -1,0 +1,10 @@
+.DS_Store
+.idea
+node_modules
+docs
+npm-debug.log
+uirecorder.log
+reports
+screenshots/**/*.png
+screenshots/**/*.html
+screenshots/**/*.json

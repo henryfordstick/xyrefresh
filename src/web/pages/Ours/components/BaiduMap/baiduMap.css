@@ -1,0 +1,22 @@
+.baiduMap{
+  border: 1px solid #DCDCDC;
+  padding: 10px;
+  & #mapContainer{
+    width: 100%;
+    height: 500px;
+    border: 1px solid #ccc;
+    & h3{
+      color: #CC5522;
+      font-size: 14px;
+      font-weight: bold;
+      overflow: hidden;
+      padding-right: 13px;
+      white-space: nowrap;
+      margin-bottom: 10px;
+    }
+    & p{
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+}
