@@ -28,7 +28,7 @@
 - Jest：测试前后端项目，单元测试，API 测试等。
 - Typescript：为 JS 提供良好的类型检查功能，能编译出高质量的 JS 代码。
 
-项目没有使用脚手架工具搭建，都是一步一步配置而成。具体的搭建流程：[项目选型与环境搭建](https://github.com/lmjben/cdfang-spider/blob/master/Introduction.md)。
+项目没有使用脚手架工具搭建，都是一步一步配置而成。具体的搭建流程：[项目选型与环境搭建](https://github.com/henryfordstick/xyrefresh/blob/master/Introduction.md)。
 
 ## Start
 
