@@ -6,7 +6,7 @@
   "author": "henryfordstick <henryfordstick@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "npm-run-all --parallel client:dev server:dev",
+    "build": "npm-run-all --parallel client:dev server:dev",
     "client:dev": "scripty",
     "client:prod": "scripty",
     "client:start": "scripty",
