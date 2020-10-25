@@ -6,7 +6,7 @@
 
    - react 个人爱好。
    - react-router 定义路由。
-   - react context 状态管理。
+   - mobx-react-lite 状态管理。
    - react hooks 组件化。
 
 2. 引入强类型语言？
@@ -19,7 +19,7 @@
 
 3. css 选型？
 
-   - 预编译器 less。项目中使用了变量定义，选择器嵌套，选择器复用等，less 够用了。
+   - cssnext可以支持语法嵌套和公共变量的定义。
    - 解决命名冲突可以使用 css modules，暂未考虑 css in js。
    - 使用 bem 命名规范。
    - 使用 postcss 插件 autoprefixer，增加 css 兼容性。
@@ -29,7 +29,7 @@
    - webpack。内置 tree shaking，scope hosting 等，打包效率高，社区活跃。
    - webpack-merge 合并不同环境配置文件。
    - 配置 externals。引入 cdn 代替 node_modules 中体积较大的包。
-   - gulp。用来打包 node 端代码。
+   - gulp。用来打包 node 端代码，处理node不能。
 
 5. 代码规范检查？
 
@@ -112,7 +112,7 @@ React 是一个库，基于组件式开发，开发时常常需要用到以下�
 - es6 模块化。
 - jsx 语法。
 - typescript 语法。
-- css 预处理器。
+- cssnext 语法。
 
 这些语法在目前浏览器中并不能直接执行，需要进行打包编译，这也是搭建 React 环境的主要工作。
 
@@ -124,24 +124,29 @@ React 是一个库，基于组件式开发，开发时常常需要用到以下�
 
 3、React 项目分层。
 
-- containers 目录，存放单独的页面
-- components 目录，存放的是组件，一个组件包含 jsx 和 css 两个部分。
-- context 目录，存放公用的 react context。
-- config 目录，存放公共配置文件。
+- pages 目录，用于存放主页面
+- components 目录，存放的是公共组件，一个组件包含 jsx 和 css 两个部分。
+- assets 目录，存放的是静态资源，图片，字体，公共的css样式。
+- routes 目录，存放的是路由的配置。
+- tools 目录，存放的是状态管理的配置。
+- models 目录，用来规定公共状态的类型和提供模拟数据。
 - utils 目录，公用的函数组件库。
-- constants 目录，存放静态变量。
+- types 目录，用来存放声明文件。
 
-4、配置 webpack，以 index.tsx 为入口文件，进行打包编译。
+4、配置 webpack5，以 index.tsx 为入口文件，进行打包编译。
 
-- 由于不同环境的打包方式并不相同，这里抽象出开发环境、上线环境、优化环境的配置文件，使用 webpack-merge 合并配置文件。
-- 配置 css 预处理器，使用 less-loader。
+- 由于不同环境的打包方式并不相同，这里抽象出开发环境、上线环境、同构环境的配置文件，使用 webpack-merge 合并配置文件。
+- 配置 css 预处理器，使用 postcss-loader。
 - 配置 ts 编译器，使用 babel-loader。
   - @babel/preset-env：编译最新的 es 语法。
   - @babel/preset-react：编译 react 语法。
   - @babel/preset-typescript：转换 typescript 语法。
-- 配置 url-loader，打包项目中的图片资源。
+- 配置 experiments，将 asset 置为true，开启实验属性，代替webpack4中的url-loader或file-loader。
+- 配置 mini-css-extract-plugin 将CSS提取为独立的文件的插件，对每个包含css的js文件都会创建一个CSS文件，支持按需加载css和sourceMap。
+- 配置 friendly-errors-webpack-plugin 错误友好提示
+- 配置 optimize-css-assets-webpack-plugin 压缩css文件。
+- 配置 terser-webpack-plugin 压缩js的代码。
 - 配置 html-webpack-plugin 将最后生成的 js，css，注入第 1 步的 html 中。
-  - 使用 ejs 模板配置开发环境和线上环境引入的 cdn。
 - 开发环境配置，使用开箱即用的 webpack-dev-server。
   - webpack-dev-server 可以自动监听文件修改，自动刷新页面，以及默认 source-map 等功能。
   - 配置热模块替换，react-hot-loader。
@@ -155,7 +160,7 @@ React 是一个库，基于组件式开发，开发时常常需要用到以下�
 ```json
 // cross-env 用来跨环境设置环境变量
 "scripts": {
-  "dev:client": "cross-env NODE_ENV=development webpack-dev-server --open"
+  "client:dev": "cross-env NODE_ENV=development webpack-dev-server --open"
 }
 ```
 
@@ -335,11 +340,9 @@ docker-compose up -d
 # server running at localhost:8082
 ```
 
-Docker 部署项目原理可以参考[Docker 使用总结](https://lmjben.github.io/blog/project-docker.html)。
-
 ## 总结
 
-至此，整个项目选型与搭建流程已经介绍完毕了，当然还有一些很细节的地方没有写进去，如果有不太明白的地方，可以提 issue，或者加我微信 yhl2016226。
+至此，整个项目选型与搭建流程已经介绍完毕了，当然还有一些很细节的地方没有写进去。
 
 接下来对以下 4 个方面写个小总结。
 
@@ -348,7 +351,7 @@ Docker 部署项目原理可以参考[Docker 使用总结](https://lmjben.github
 - 运维方面：通过配置持续集成，守护进程，nginx，https 等，让我有能力实现小型项目的部署。
 - 技术方面：项目中使用了一些比较新的技术，如：hooks api，graphql 等，但用的都很基础，主要是为了练手，后续还得深入学习。
 
-对于项目后期更新，主要是基于以下几个方面：graphql，docker，k8s，微服务，serverless 等，东西太多，还得加油学习啊，😂
+对于项目后期更新，主要是基于以下几个方面：graphql，docker，微服务，serverless 等。
 
 ## 参考链接
 
