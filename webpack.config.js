@@ -3,6 +3,7 @@ const {join,resolve} = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const argv = require('yargs-parser')(process.argv.slice(2));
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 
 const _mode = argv.mode || "development";
 const _modeFlag = _mode === "production";
@@ -74,7 +75,14 @@ const webpackConfig = {
       chunkFilename: _modeFlag
         ? 'styles/[name].[contenthash:8].css'
         : 'styles/[name].css',
-    })
+    }),
+
+    new WorkboxWebpackPlugin.GenerateSW({
+      // 这些选项帮助快速启用 ServiceWorkers
+      // 不允许遗留任何“旧的” ServiceWorkers
+      clientsClaim: true,
+      skipWaiting: true,
+    }),
   ],
 
   optimization: {

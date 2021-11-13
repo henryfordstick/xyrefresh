@@ -41,6 +41,16 @@ app.context.render = co.wrap(
   })
 );
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js').then(registration => {
+      console.log('SW registered: ', registration);
+    }).catch(registrationError => {
+      console.log('SW registration failed: ', registrationError);
+    });
+  });
+}
+
 // 设置日志
 log4js.configure({
   appenders: { cheese: { type: 'file', filename: `${__dirname}/logs/error.log` } },
